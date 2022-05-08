@@ -10,12 +10,13 @@ with open("TDK_Sozluk_Kelime_Listesi.txt", "r", encoding="UTF-8") as dosya:
             print("UYARI: izin verilen harflerin disinda bir veya daha fazla harf yazdiginiz icin, isleme devam edilemiyor!")
             break
         
-        puan = 0
-        for kelime in liste:
-            for harf in girdi:
-                if harf in kelime[:-1]:
-                    puan += 1
-            if puan >= len(girdi):
-                print(kelime[:-1])
-                
+        else:
             puan = 0
+            for kelime in liste:
+                for harf in girdi:
+                    if harf in kelime[:-1]:
+                        puan += 1
+                if puan >= len(girdi):
+                    print(kelime[:-1])
+                    
+                puan = 0
