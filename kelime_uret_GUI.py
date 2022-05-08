@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from faulthandler import disable
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter import END, messagebox
@@ -7,6 +8,9 @@ from tkinter import END, messagebox
 #Fonksiyonlar
 
 def ara():
+    
+    cikti.delete("1.0",tk.END)
+
     with open("TDK_Sozluk_Kelime_Listesi.txt", "r", encoding="UTF-8") as dosya:
         liste = dosya.readlines()
         alfabe = "abcçdefgğhıijklmnoöprsştuüvyz"     
@@ -26,18 +30,29 @@ def ara():
                     for harf in aranan:
                         if harf in kelime[:-1]:
                             deger += 1
-                
+                    
                     if deger == len(aranan):
-                        cikti.insert(END,kelime)
+                        icerik = cikti.get("1.0", END)
+                        if kelime not in icerik:
+                            cikti.insert(END,kelime)
 
                     deger = 0
+                
+                if (int(cikti.index("end")[:-2]) - 2 == 0):
+                    sonuc["text"] = "Sonuç bulunamadı."
+
+                else:
+                    sonuc_sayi = int(cikti.index("end")[:-2])    
+                    sonuc["text"] = "Toplam " + str(sonuc_sayi - 2) + " sonuç bulundu."
 
 def kaydet():
-    pass
+    with open("sonuc.txt", "w", encoding="UTF-8") as dosya:
+        dosya.write(cikti.get("1.0","end"))
 
 def temizle():
     girdi.delete(0, tk.END)
     cikti.delete("1.0",tk.END)
+    sonuc["text"] = ""
 
 pencere = tk.Tk()
 pencere.geometry("300x450+600+300")
@@ -56,7 +71,7 @@ girdi.place(x=10, y=80)
 
 cikti = tk.Text(pencere,
                 width=31,
-                height=15,
+                height=14,
                 state="normal")
 cikti.place(x=10, y=110)
 
@@ -66,6 +81,11 @@ kaydirma_cubugu.place(x=270, y=110)
 kaydirma_cubugu.config(command=cikti.yview)
 
 cikti['yscrollcommand'] = kaydirma_cubugu.set
+
+sonuc = tk.Label(pencere,
+                text="",
+                fg = "blue")
+sonuc.place(x=10, y= 357)                
 
 btn_genisligi = 12
 
