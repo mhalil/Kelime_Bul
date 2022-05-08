@@ -57,9 +57,9 @@ def temizle():
 pencere = tk.Tk()
 pencere.geometry("300x450+600+300")
 pencere.resizable("FALSE", "FALSE")
-pencere.title("Kelime Üret")
+pencere.title("Kelime Bul ve Listele")
 
-# Arayüz Tasarımı
+# Arayüz Unsurlarının (Widget) Yerleşimi
 aciklama = tk.Label(pencere, text = "Bulmak istediğiniz kelimeye ait \nHarfleri, aralarında boşluk bırakmadan \naşağıdaki kutuya  yazın;",
                     fg = "blue",
                     font = "Tahoma 10")
@@ -70,17 +70,10 @@ girdi = tk.Entry(pencere, width=34)
 girdi.place(x=10, y=80)
 
 cikti = tk.Text(pencere,
-                width=31,
+                width=34,
                 height=14,
                 state="normal")
 cikti.place(x=10, y=110)
-
-kaydirma_cubugu = ttk.Scrollbar(pencere,
-                                orient="vertical")
-kaydirma_cubugu.place(x=270, y=110)
-kaydirma_cubugu.config(command=cikti.yview)
-
-cikti['yscrollcommand'] = kaydirma_cubugu.set
 
 sonuc = tk.Label(pencere,
                 text="",
