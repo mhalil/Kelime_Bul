@@ -2,14 +2,14 @@
 
 import tkinter as tk
 import tkinter.ttk as ttk
-from tkinter import messagebox
+from tkinter import END, messagebox
 
 #Fonksiyonlar
 
 def ara():
     with open("TDK_Sozluk_Kelime_Listesi.txt", "r", encoding="UTF-8") as dosya:
         liste = dosya.readlines()
-        alfabe = "abcçdefgğhıijklmnoöprsştuüvyz"
+        alfabe = "abcçdefgğhıijklmnoöprsştuüvyz"     
 
         for harf in girdi.get():
             if harf not in alfabe or girdi.get() == "Lütfen geçerli karakter yazın":
@@ -19,16 +19,18 @@ def ara():
 
             
             else:
-                puan = 0
+                deger = 0
+                aranan = girdi.get()
+                
                 for kelime in liste:
-                    for harf in girdi.get():
+                    for harf in aranan:
                         if harf in kelime[:-1]:
-                            puan += 1
-                if puan >= len(girdi.get()):
-                    cikti.insert(tk.END,kelime)
-                    
-                puan = 0
+                            deger += 1
+                
+                    if deger == len(aranan):
+                        cikti.insert(END,kelime)
 
+                    deger = 0
 
 def kaydet():
     pass
@@ -42,16 +44,14 @@ pencere.geometry("300x450+600+300")
 pencere.resizable("FALSE", "FALSE")
 pencere.title("Kelime Üret")
 
-# messagebox.showinfo("Bilgi !", "Bu Uygulama, Kullanıcının belirttiği sesli/sessiz harfleri içeren kelimeleri Türkçe Sozlük dosyasında tarayarak, eşleşen kelimeleri listeler.")
-
+# Arayüz Tasarımı
 aciklama = tk.Label(pencere, text = "Bulmak istediğiniz kelimeye ait \nHarfleri, aralarında boşluk bırakmadan \naşağıdaki kutuya  yazın;",
                     fg = "blue",
                     font = "Tahoma 10")
 aciklama.place(x=20, y=10)
 
 girdi = tk.Entry(pencere, width=34)
-girdi.insert(0,"Lütfen geçerli karakter yazın")
-
+# girdi.insert(0,"Lütfen geçerli karakter yazın")
 girdi.place(x=10, y=80)
 
 cikti = tk.Text(pencere,
@@ -64,6 +64,7 @@ kaydirma_cubugu = ttk.Scrollbar(pencere,
                                 orient="vertical")
 kaydirma_cubugu.place(x=270, y=110)
 kaydirma_cubugu.config(command=cikti.yview)
+
 cikti['yscrollcommand'] = kaydirma_cubugu.set
 
 btn_genisligi = 12
