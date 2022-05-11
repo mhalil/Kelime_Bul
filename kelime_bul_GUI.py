@@ -47,7 +47,7 @@ def ara():
 
 def kaydet():
     with open("sonuc.txt", "w", encoding="UTF-8") as dosya:
-        dosya.write(cikti.get("1.0","end"))
+        dosya.write("'" + girdi.get() + "' Karakterlerini barındıran kelime araması sonucu " + cikti.index("end")[:-2] + " adet sonuç bulunmuştur.\nKelime(ler) Aşağıda listelenmiştir.\n\n" + cikti.get("1.0","end"))
 
 def temizle():
     girdi.delete(0, tk.END)
