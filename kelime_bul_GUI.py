@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from faulthandler import disable
-from sre_parse import State
 import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter import END, messagebox
@@ -58,6 +56,7 @@ def temizle():
     sonuc["text"] = ""
     btn_kaydet.configure(state = "disabled")
 
+# Pencere Ebatları ve Renk Tanımları
 arkaplan_rengi = "#17a589"
 arkaplan_rengi_metin = "#d1f2eb"
 arkaplan_rengi_buton = "#17a589"
