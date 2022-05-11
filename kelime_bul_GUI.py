@@ -48,7 +48,8 @@ def ara():
 
 def kaydet():
     with open("sonuc.txt", "w", encoding="UTF-8") as dosya:
-        dosya.write("'" + girdi.get() + "' Karakterlerini barındıran kelime araması sonucu " + cikti.index("end")[:-2] + " adet sonuç bulunmuştur.\nArama sonucu bulunan kelimeler, aşağıda listelenmiştir.\n\n" + cikti.get("1.0","end"))
+        bulunan_kelime = str(int(cikti.index("end")[:-2]) - 2)
+        dosya.write("'" + girdi.get() + "' Karakterlerini barındıran kelime araması sonucu " + bulunan_kelime + " adet sonuç bulunmuştur.\nArama sonucu bulunan kelimeler, aşağıda listelenmiştir.\n\n" + cikti.get("1.0","end"))
 
 def temizle():
     girdi.delete(0, tk.END)
@@ -56,6 +57,15 @@ def temizle():
     sonuc["text"] = ""
     btn_kaydet.configure(state = "disabled")
 
+def pencere_hakkinda():     # "Hakkında" Penceresinin Özellikleri ve Metni                      
+    hakkinda = tk.Toplevel()
+    hakkinda.title("Hakkında")
+    hakkinda.geometry("300x125")
+    hakkinda.resizable("FALSE", "FALSE")
+    bilgi = tk.Label(hakkinda, text="\nKelime Bul, Listele ve Kaydet\n\nKodlayan: Mustafa Halil\n\nhttps://github.com/mhalil\n")
+    bilgi.pack()
+
+    
 # Pencere Ebatları ve Renk Tanımları
 arkaplan_rengi = "#17a589"
 arkaplan_rengi_metin = "#d1f2eb"
@@ -64,10 +74,22 @@ arkaplan_rengi_buton = "#17a589"
 pencere = tk.Tk()
 pencere.geometry("300x450+600+300")
 pencere.resizable("FALSE", "FALSE")
-pencere.title("Kelime Bul ve Listele")
+pencere.title(".:: Kelime Bul ::.")
 pencere.configure(bg = arkaplan_rengi)
 
 # Arayüz Unsurlarının (Widget) Yerleşimi
+
+menu_cubugu = tk.Menu(pencere)
+pencere.config(menu=menu_cubugu) #menümüzü oluşturduk
+
+dosya_menusu = tk.Menu(menu_cubugu, tearoff=0)
+menu_cubugu.add_cascade(label="Dosya", menu=dosya_menusu)
+dosya_menusu.add_command(label="Kapat", command=pencere.quit)
+
+hakkinda_menusu = tk.Menu(menu_cubugu, tearoff=0)
+menu_cubugu.add_cascade(label="Hakkında", menu=hakkinda_menusu)
+hakkinda_menusu.add_command(label="Hakkında", command=pencere_hakkinda)   
+
 aciklama = tk.Label(pencere, text = "Aradığınız kelimeye ait harfleri,\naralarında boşluk bırakmadan \naşağıdaki kutuya  yazın. Ör. tryk",
                     fg = "white",
                     bg = arkaplan_rengi,
