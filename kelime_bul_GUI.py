@@ -18,8 +18,9 @@ def ara():
 
         for harf in girdi.get():
             if harf not in alfabe or girdi.get() == "Lütfen geçerli karakter yazın":
-                messagebox.showerror("Hatalı Karakter!","izin verilen harflerin disinda bir veya daha fazla harf yazdiginiz icin, isleme devam edilemiyor!\nKullanılabilir karakterler şunlardır:\nabcçdefgğhıijklmnoöprsştuüvyz")
+                messagebox.showerror("Hatalı Karakter!","İzin verilen karakterlerin dışında bir veya daha fazla karakter yazdığınız için, işleme devam edilemiyor!\nKullanılabilir karakterler şunlardır:\nabcçdefgğhıijklmnoöprsştuüvyz")
                 girdi.delete(0, tk.END)
+                sonuc["text"] = ""
                 break
 
             
@@ -45,6 +46,7 @@ def ara():
                 else:
                     sonuc_sayi = int(cikti.index("end")[:-2])    
                     sonuc["text"] = "Toplam " + str(sonuc_sayi - 2) + " sonuç bulundu."
+                    btn_kaydet.configure(state = "normal")
 
 def kaydet():
     with open("sonuc.txt", "w", encoding="UTF-8") as dosya:
@@ -54,6 +56,7 @@ def temizle():
     girdi.delete(0, tk.END)
     cikti.delete("1.0",tk.END)
     sonuc["text"] = ""
+    btn_kaydet.configure(state = "disabled")
 
 arkaplan_rengi = "#17a589"
 arkaplan_rengi_metin = "#d1f2eb"
@@ -119,6 +122,7 @@ btn_kaydet = tk.Button(pencere,
                     font = "Verdana 10 bold",
                     bg = arkaplan_rengi_buton,
                     fg = "white",
+                    state = "disable",
                     command= kaydet)
 btn_kaydet.place(x=10, y=415)
 
