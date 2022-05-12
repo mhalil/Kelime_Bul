@@ -84,7 +84,7 @@ pencere.configure(bg = arkaplan_rengi)
 
 # Arayüz Unsurlarının (Widget) Yerleşimi
 
-menu_cubugu = tk.Menu(pencere)
+menu_cubugu = tk.Menu(pencere, activebackground="#17a589",activeforeground="white")
 pencere.config(menu=menu_cubugu) #menümüzü oluşturduk
 
 dosya_menusu = tk.Menu(menu_cubugu)
@@ -92,7 +92,10 @@ menu_cubugu.add_cascade(label="Dosya", menu=dosya_menusu)
 dosya_menusu.add_command(label="Ara", command=ara)
 dosya_menusu.add_command(label="Temizle", command=temizle)
 dosya_menusu.add_command(label="Kaydet", command=kaydet)
-dosya_menusu.add_command(label="Kapat", command=pencere.quit)
+dosya_menusu.add_command(label="Kapat", command=pencere.quit, accelerator= "Ctrl+Q")
+
+pencere.bind("<Control-q>", exit)
+pencere.bind("<Control-Q>", exit)
 
 hakkinda_menusu = tk.Menu(menu_cubugu, tearoff=0)
 menu_cubugu.add_cascade(label="Hakkında", menu=hakkinda_menusu)
