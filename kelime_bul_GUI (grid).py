@@ -87,7 +87,7 @@ pencere.configure(bg = arkaplan_rengi)
 menu_cubugu = tk.Menu(pencere)
 pencere.config(menu=menu_cubugu) #menümüzü oluşturduk
 
-dosya_menusu = tk.Menu(menu_cubugu, tearoff=0)
+dosya_menusu = tk.Menu(menu_cubugu)
 menu_cubugu.add_cascade(label="Dosya", menu=dosya_menusu)
 dosya_menusu.add_command(label="Ara", command=ara)
 dosya_menusu.add_command(label="Temizle", command=temizle)
@@ -98,7 +98,7 @@ hakkinda_menusu = tk.Menu(menu_cubugu, tearoff=0)
 menu_cubugu.add_cascade(label="Hakkında", menu=hakkinda_menusu)
 hakkinda_menusu.add_command(label="Hakkında", command=pencere_hakkinda)   
 
-aciklama = tk.Label(pencere, text = "Aradığınız kelimeye ait harfleri,\naralarında boşluk bırakmadan \naşağıdaki kutuya  yazın. Ör. tryk",
+aciklama = tk.Label(pencere, text = "Aradığınız kelimeye ait harfleri,\naralarında boşluk bırakmadan \naşağıdaki kutuya  yazın. Ör. trky",
                     fg = "white",
                     bg = arkaplan_rengi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 11",
