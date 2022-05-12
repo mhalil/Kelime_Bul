@@ -89,6 +89,8 @@ pencere.config(menu=menu_cubugu) #menümüzü oluşturduk
 
 dosya_menusu = tk.Menu(menu_cubugu, tearoff=0)
 menu_cubugu.add_cascade(label="Dosya", menu=dosya_menusu)
+dosya_menusu.add_command(label="Ara", command=ara)
+dosya_menusu.add_command(label="Temizle", command=temizle)
 dosya_menusu.add_command(label="Kaydet", command=kaydet)
 dosya_menusu.add_command(label="Kapat", command=pencere.quit)
 
@@ -128,8 +130,8 @@ btn_ara = tk.Button(pencere,
                     text = "Ara",
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
-                    bg = arkaplan_rengi_buton,
-                    fg = "white",
+                    # bg = arkaplan_rengi_buton,
+                    # fg = "white",
                     command= ara)
 btn_ara.place(x=10, y=380)
 
@@ -137,8 +139,8 @@ btn_temizle = tk.Button(pencere,
                     text = "Temizle",
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
-                    bg = arkaplan_rengi_buton,
-                    fg = "white",
+                    # bg = arkaplan_rengi_buton,
+                    # fg = "white",
                     command= temizle)
 btn_temizle.place(x=150, y=380)
 
@@ -147,8 +149,8 @@ btn_kaydet = tk.Button(pencere,
                     text = "Kaydet",
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
-                    bg = arkaplan_rengi_buton,
-                    fg = "white",
+                    # bg = arkaplan_rengi_buton,
+                    # fg = "white",
                     state = "disable",
                     command= kaydet)
 btn_kaydet.place(x=10, y=415)
@@ -157,8 +159,8 @@ btn_kapat = tk.Button(pencere,
                     text = "Kapat",
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
-                    bg = "#cd6155",
-                    fg = "white",
+                    # bg = "#cd6155",
+                    # fg = "white",
                     command=quit)
 btn_kapat.place(x=150, y=415)
 

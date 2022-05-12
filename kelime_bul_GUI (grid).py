@@ -89,6 +89,8 @@ pencere.config(menu=menu_cubugu) #menümüzü oluşturduk
 
 dosya_menusu = tk.Menu(menu_cubugu, tearoff=0)
 menu_cubugu.add_cascade(label="Dosya", menu=dosya_menusu)
+dosya_menusu.add_command(label="Ara", command=ara)
+dosya_menusu.add_command(label="Temizle", command=temizle)
 dosya_menusu.add_command(label="Kaydet", command=kaydet)
 dosya_menusu.add_command(label="Kapat", command=pencere.quit)
 
@@ -129,8 +131,8 @@ btn_ara = tk.Button(pencere,
                     text = "Ara",
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
-                    bg = arkaplan_rengi_buton,
-                    fg = "white",
+                    # bg = arkaplan_rengi_buton,
+                    fg = "black",
                     command= ara)
 btn_ara.grid(row=4, column=0, padx=3, pady=3)
 
@@ -138,8 +140,8 @@ btn_temizle = tk.Button(pencere,
                     text = "Temizle",
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
-                    bg = arkaplan_rengi_buton,
-                    fg = "white",
+                    # bg = arkaplan_rengi_buton,
+                    fg = "black",
                     command= temizle)
 btn_temizle.grid(row=4, column=1, padx=3, pady=3)
 
@@ -148,8 +150,8 @@ btn_kaydet = tk.Button(pencere,
                     text = "Kaydet",
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
-                    bg = arkaplan_rengi_buton,
-                    fg = "white",
+                    # bg = arkaplan_rengi_buton,
+                    fg = "black",
                     state = "disable",
                     command= kaydet)
 btn_kaydet.grid(row=5, column=0, padx=3, pady=3)
@@ -158,8 +160,8 @@ btn_kapat = tk.Button(pencere,
                     text = "Kapat",
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
-                    bg = "#cd6155",
-                    fg = "white",
+                    # bg = "#cd6155",
+                    fg = "black",
                     command=quit)
 btn_kapat.grid(row=5, column=1, padx=3, pady=3)
 
