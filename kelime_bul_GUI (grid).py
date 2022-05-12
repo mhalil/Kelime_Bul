@@ -67,7 +67,7 @@ def pencere_hakkinda():     # "Hakkında" Penceresinin Özellikleri ve Metni
     hakkinda.title("Hakkında")
     hakkinda.geometry("300x125")
     hakkinda.resizable("FALSE", "FALSE")
-    bilgi = tk.Label(hakkinda, text="\nKelime Bul, Listele ve Kaydet\n\nKodlayan: Mustafa Halil\n\nhttps://github.com/mhalil\n")
+    bilgi = tk.Label(hakkinda, text="\nKelime Bul, Listele ve Kaydet\n[ Tkinter - grid() Yerleşimi ]\n\nKodlayan: Mustafa Halil\n\nhttps://github.com/mhalil\n")
     bilgi.pack()
 
     
