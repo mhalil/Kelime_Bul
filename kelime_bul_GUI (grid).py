@@ -132,7 +132,7 @@ btn_ara = tk.Button(pencere,
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
                     # bg = arkaplan_rengi_buton,
-                    fg = "black",
+                    # fg = "black",
                     command= ara)
 btn_ara.grid(row=4, column=0, padx=3, pady=3)
 
@@ -141,7 +141,7 @@ btn_temizle = tk.Button(pencere,
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
                     # bg = arkaplan_rengi_buton,
-                    fg = "black",
+                    # fg = "black",
                     command= temizle)
 btn_temizle.grid(row=4, column=1, padx=3, pady=3)
 
@@ -151,7 +151,7 @@ btn_kaydet = tk.Button(pencere,
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
                     # bg = arkaplan_rengi_buton,
-                    fg = "black",
+                    # fg = "black",
                     state = "disable",
                     command= kaydet)
 btn_kaydet.grid(row=5, column=0, padx=3, pady=3)
@@ -161,7 +161,7 @@ btn_kapat = tk.Button(pencere,
                     width = btn_genisligi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
                     # bg = "#cd6155",
-                    fg = "black",
+                    # fg = "black",
                     command=quit)
 btn_kapat.grid(row=5, column=1, padx=3, pady=3)
 
