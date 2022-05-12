@@ -14,8 +14,8 @@ def ara():
         liste = dosya.readlines()
         alfabe = "abcçdefgğhıijklmnoöprsştuüvyz"     
 
-        for harf in girdi.get():
-            if harf not in alfabe or girdi.get() == "Lütfen geçerli karakter yazın":
+        for harf in girdi.get().lower():
+            if harf not in alfabe:
                 messagebox.showerror("Hatalı Karakter!","İzin verilen karakterlerin dışında bir veya daha fazla karakter yazdığınız için, işleme devam edilemiyor!\nKullanılabilir karakterler şunlardır:\nabcçdefgğhıijklmnoöprsştuüvyz")
                 girdi.delete(0, tk.END)
                 sonuc["text"] = ""
@@ -24,7 +24,7 @@ def ara():
             
             else:
                 deger = 0
-                aranan = girdi.get()
+                aranan = girdi.get().lower()
                 
                 for kelime in liste:
                     for harf in aranan:
