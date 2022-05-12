@@ -101,26 +101,27 @@ aciklama = tk.Label(pencere, text = "Aradığınız kelimeye ait harfleri,\naral
                     bg = arkaplan_rengi,
                     font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 11",
                     width=32)
-aciklama.place(x=4, y=10)
+aciklama.grid(row=0, column=0, columnspan=2, padx=5, pady=3)
 
 girdi = tk.Entry(pencere, 
                 width=34,
                 bg = arkaplan_rengi_metin)
-girdi.place(x=10, y=80)
+girdi.grid(row=1, column=0, columnspan=2, padx=5, pady=3)
 
 cikti = tk.Text(pencere,
                 width=34,
                 height=14,
+                font = "Tahoma,Verdana,DejaVuSans,LiberationSans,Ubuntu 10",
                 state="normal",
                 bg = arkaplan_rengi_metin)
-cikti.place(x=10, y=110)
+cikti.grid(row=2, column=0, columnspan=2, padx=5, pady=3)
 
 sonuc = tk.Label(pencere,
                 text = "",
                 font = "Verdana,Tahoma,DejaVuSans,LiberationSans,Ubuntu 10 bold",
                 fg = "white",
                 bg = arkaplan_rengi)
-sonuc.place(x=10, y= 357)                
+sonuc.grid(row=3, column=0, columnspan=2, padx=5, pady=3)              
 
 btn_genisligi = 12
 
@@ -131,7 +132,7 @@ btn_ara = tk.Button(pencere,
                     bg = arkaplan_rengi_buton,
                     fg = "white",
                     command= ara)
-btn_ara.place(x=10, y=380)
+btn_ara.grid(row=4, column=0, padx=3, pady=3)
 
 btn_temizle = tk.Button(pencere,
                     text = "Temizle",
@@ -140,7 +141,7 @@ btn_temizle = tk.Button(pencere,
                     bg = arkaplan_rengi_buton,
                     fg = "white",
                     command= temizle)
-btn_temizle.place(x=150, y=380)
+btn_temizle.grid(row=4, column=1, padx=3, pady=3)
 
 
 btn_kaydet = tk.Button(pencere,
@@ -151,7 +152,7 @@ btn_kaydet = tk.Button(pencere,
                     fg = "white",
                     state = "disable",
                     command= kaydet)
-btn_kaydet.place(x=10, y=415)
+btn_kaydet.grid(row=5, column=0, padx=3, pady=3)
 
 btn_kapat = tk.Button(pencere,
                     text = "Kapat",
@@ -160,6 +161,6 @@ btn_kapat = tk.Button(pencere,
                     bg = "#cd6155",
                     fg = "white",
                     command=quit)
-btn_kapat.place(x=150, y=415)
+btn_kapat.grid(row=5, column=1, padx=3, pady=3)
 
 pencere.mainloop()
