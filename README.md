@@ -1,7 +1,6 @@
 # Kelime Bul ve Listele
-Kullanıcının belirttiği sesli / sessiz harfleri içeren kelimeleri, Türkçe Sozlük dosyasında tarayarak, eşleşen kelimeleri listeleyen ve kaydeden python programı.
-Kodları konsoldan çalıştırıp sonucu kosol ekranında görmek isterseniz, **kelime_bul.py** dosyasını,
-Uygulamayı Görsel arayüz ile kullanmak isterseniz de **kelime_bul_GUI.py** dosyasını çalıştırmalısınız.
+Kullanıcının belirttiği **harfleri içeren** kelimeleri, **Kelime Listesi** dosyasında tarayarak, eşleşen kelimeleri listeleyen ve kaydeden python programı.
+Kodları **Konsol** üzerinde çalıştırıp sonucu konsol ekranında görmek isterseniz, **kelime_bul.py** dosyasını, Uygulamayı **Grafik Arayüzü** ile kullanmak isterseniz de **kelime_bul_GUI.py** dosyasını çalıştırmalısınız.
 
 ## Mevcut Fonksiyonlar:
 * **Ara**ma
@@ -9,7 +8,7 @@ Uygulamayı Görsel arayüz ile kullanmak isterseniz de **kelime_bul_GUI.py** do
 * Sonuçları **sonuc.txt** ismiyle çalışma dizinine **Kaydet**mek
 
 ## Not:
-Uygulamayı python 3.8 ile, LinuxMint kurulu bilgisayarda test ettim.
+Uygulama, python 3.8 ve 3.9  sürümleri yüklü, Linux işletim sisteminde test edilmiştir.
 
-## Uygulamanın Görseli:
+## Uygulamanın Arayüzü:
 ![Uygulama _Arabirimi](https://raw.githubusercontent.com/mhalil/Kelime_Bul/main/Arabirim.png)
