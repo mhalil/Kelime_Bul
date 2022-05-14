@@ -111,6 +111,7 @@ aciklama.place(x=4, y=10)
 girdi = tk.Entry(pencere, 
                 width=34,
                 bg = arkaplan_rengi_metin)
+girdi.focus()                
 girdi.place(x=10, y=80)
 
 cikti = tk.Text(pencere,
